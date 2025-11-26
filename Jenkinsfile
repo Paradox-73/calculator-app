@@ -9,8 +9,8 @@ pipeline {
         stage('Build Code') {
             steps {
                 echo 'Compiling Java Code...'
-                sh 'javac Calculator.java'
-                sh 'javac TestCalculator.java'
+                sh 'javac --release 17 Calculator.java'
+                sh 'javac --release 17 TestCalculator.java'
             }
         }
         stage('Test Code') {
