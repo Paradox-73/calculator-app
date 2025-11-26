@@ -30,7 +30,8 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 echo 'Pushing to Docker Hub...'
-                sh 'echo $REGISTRY_CREDENTIALS_PASSWORD | docker login -u $REGISTRY_CREDENTIALS_USR --password-stdin'
+                // Change _PASSWORD to _PSW
+                sh 'echo $REGISTRY_CREDENTIALS_PSW | docker login -u $REGISTRY_CREDENTIALS_USR --password-stdin'
                 sh "docker push $DOCKER_IMAGE:${BUILD_NUMBER}"
                 sh "docker push $DOCKER_IMAGE:latest"
             }
