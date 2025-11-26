@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         // Citations 45 and 48: referencing the specific IDs created in Jenkins
-        DOCKER_IMAGE = '<paradox73>/calculator-app'
+        DOCKER_IMAGE = 'paradox73/calculator-app'
         REGISTRY_CREDENTIALS = credentials('dockerhub-creds') 
     }
     stages {
